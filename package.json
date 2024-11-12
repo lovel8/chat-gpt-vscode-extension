@@ -36,6 +36,17 @@
   ],
   "main": "./out/extension.js",
   "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Chat GPT Extension Settings",
+      "properties": {
+        "vscodeChatGpt.proxyUrl": {
+          "type": "string",
+          "default": "",
+          "description": "Proxy URL for Chat GPT requests (e.g., http://proxy-server:port)."
+        }
+      }
+    },
     "viewsContainers": {
       "activitybar": [
         {
@@ -65,7 +76,7 @@
       },
       {
         "command": "vscode-chat-gpt.refactor",
-        "title": "ChatGpt Refactor"   
+        "title": "ChatGpt Refactor"
       },
       {
         "command": "vscode-chat-gpt.addComments",
@@ -104,7 +115,7 @@
         {
           "command": "vscode-chat-gpt.refactor",
           "group": "ChatGpt",
-          "when": "editorLangId == typescript || editorLangId == javascript || editorLangId == csharp || editorLangId == java" 
+          "when": "editorLangId == typescript || editorLangId == javascript || editorLangId == csharp || editorLangId == java"
         },
         {
           "command": "vscode-chat-gpt.addComments",
@@ -113,7 +124,7 @@
         {
           "command": "vscode-chat-gpt.addDocumentaion",
           "group": "ChatGpt",
-          "when": "editorLangId == typescript || editorLangId == javascript || editorLangId == csharp || editorLangId == java" 
+          "when": "editorLangId == typescript || editorLangId == javascript || editorLangId == csharp || editorLangId == java"
         }
       ]
     },
